@@ -5,7 +5,8 @@
     <link rel="STYLESHEET" type="text/css" href="estilojava.css">
     <link rel="STYLESHEET" type="text/css" href="960.css">
     <link rel="STYLESHEET" type="text/css" href="estilo_propio.css"> 
-    <link rel="STYLESHEET" type="text/css" href="estilomenu.css"> 
+    <link rel="STYLESHEET" type="text/css" href="estilomenu.css">
+    <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
   </head>
   
   <body>
@@ -48,21 +49,30 @@
         </ul>
       </div>
       <br>
-      <div id="consulta" class= "grid_6">
-        <?php 
-        include("producto.php");
-        ?>
-      </div>
-
       <div id="div_form" class= "grid_6">
-        <form action="insertar.php" method="post">
-          <p>Nombre: <br><input type="text" name="nombre"></p>
-          <p>Descripcion: <textarea rows="4" cols="50" name="descripcion">Inserte Descripción</textarea></p>
-          <p>Precio: <br><input type="text" name="precio"><p>
-          <input type="submit" name="Subir">
-          <input type="reset" name="Borrar">
+        <form name="nuevo_producto" action="" onsubmit="enviarDatosProducto(); return false">
+        <h2>Nuevo empleado</h2>
+        <table>
+          <tr>
+            <td>Nombre:</td><td><label><input name="nombre" type="text" /></label></td>
+          </tr>
+          <tr>
+            <td>Descripción: </td><td><label><textarea rows="6" cols="30" type="text" name="descripcion"></textarea></td>
+          </tr>
+          <tr>
+            <td>Precio: </td><td><label><input name="precio" type="text" /></label></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td><label><input type="submit" name="Submit" value="Grabar" /></label></td>
+          </tr>
+        </table>
         </form>
       </div>
+        <div id="resultado" class="grid_6">
+          <?php include('producto.php');?>
+        </div>
+ 
+
 
       <div id = "linea" class = "grid_12">
         <br> 
